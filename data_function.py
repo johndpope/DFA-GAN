@@ -118,9 +118,8 @@ class RefineData(torch.utils.data.Dataset):
             with torch.no_grad():
 
                 if hp.is_real == True:
-                    w = w[0][0]
-                    w_ = w.unsqueeze(0).clone()
-                    w_ = w_.repeat(14,1)
+                    w_ = w[0]
+                    w_ = w
                 else:
                     w_ = w.unsqueeze(0).clone()
                     w_ = w_.repeat(14,1)
